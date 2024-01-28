@@ -51,6 +51,7 @@ func LatestDownloadLink(downloadable DownloadObject, version string) string {
 	// Get the filename of the downloadable
 	versionStringVTrimmed := strings.TrimPrefix(version, "v")
 	filename := fmt.Sprintf("%v_%v_%v_%v.tar.gz", downloadable.binary, versionStringVTrimmed, runtime.GOOS, runtime.GOARCH)
+	// Example format
 	// "https://github.com/Guerrilla-Interactive/ngo/releases/download/v1.1.0/ngo_1.1.0_linux_arm64.tar.gz"
 	return fmt.Sprintf("https://github.com/%v/%v/releases/download/%v/%v",
 		downloadable.repo.owner, downloadable.repo.name, version, filename)
